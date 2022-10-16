@@ -1,0 +1,34 @@
+#pragma kernel Preprocess
+
+// Preprocessor (texture to tensor conversion)
+
+// Input
+sampler2D _Texture;
+uint _Size;
+float2 _Range;
+
+// Output
+RWBuffer<float> _Tensor;
+
+[numthreads(8, 8, 1)]
+void Preprocess(uint3 id : SV_DispatchThreadID)
+{
+    // UV (vertically flipped)
+    float2 uv = float2(0.5 + id.x, _Size - 0.5 - id.y) / _Size;
+
+    // UV gradients
+    float2 duv_dx = float2(1.0 / _Size, 0);
+    float2 duv_dy = float2(0, -1.0 / _Size);
+
+    // Texture sample
+    float3 rgb = tex2Dgrad(_Texture, uv, duv_dx, duv_dy).rgb;
+
+    // Value range remapping
+    rgb = rgb * (_Range.y - _Range.x) + _Range.x;
+
+    // Tensor element output
+    uint offs = (id.y * _Size + id.x) * 3;
+    _Tensor[offs + 0] = rgb.r;
+    _Tensor[offs + 1] = rgb.g;
+    _Tensor[offs + 2] = rgb.b;
+}
