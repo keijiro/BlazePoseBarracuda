@@ -1,6 +1,5 @@
 #pragma kernel Postprocess1Layer1
 #pragma kernel Postprocess1Layer2
-#pragma kernel Postprocess1Layer3
 
 // 1st postprocessor (bounding box aggregation)
 
@@ -16,10 +15,10 @@ AppendStructuredBuffer<Detection> _Output;
 
 // Common settings
 #define ANCHOR_COUNT 2
-#define SCORE_THRESHOLD 0.75
+#define SCORE_THRESHOLD 0.5
 
 // First layer: 8-pixel stride
-#define CELLS_IN_ROW 16
+#define CELLS_IN_ROW (DETECTOR_IMAGE_SIZE / 8)
 #define KERNEL_NAME Postprocess1Layer1
 #include "Postprocess1Kernel.hlsl"
 
@@ -27,14 +26,6 @@ AppendStructuredBuffer<Detection> _Output;
 #undef KERNEL_NAME
 
 // Second layer: 16-pixel stride
-#define CELLS_IN_ROW 8
+#define CELLS_IN_ROW (DETECTOR_IMAGE_SIZE / 16)
 #define KERNEL_NAME Postprocess1Layer2
-#include "Postprocess1Kernel.hlsl"
-
-#undef CELLS_IN_ROW
-#undef KERNEL_NAME
-
-// Second layer: 32-pixel stride
-#define CELLS_IN_ROW 4
-#define KERNEL_NAME Postprocess1Layer3
 #include "Postprocess1Kernel.hlsl"

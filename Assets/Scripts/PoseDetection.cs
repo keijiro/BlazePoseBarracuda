@@ -117,35 +117,19 @@ public sealed partial class PoseDetector : System.IDisposable
         // 1st postprocess (bounding box aggregation)
         var post1 = _resources.postprocess1;
 
-        post1.SetInt("_RowOffset", 0);
+        //post1.SetInt("_RowOffset", 0);
+        post1.SetInt("_RowOffset", 2254 - 1568);
         post1.SetTexture(0, "_Scores", scoresRT);
         post1.SetTexture(0, "_Boxes", boxesRT);
         post1.SetBuffer(0, "_Output", _post1Buffer);
         post1.Dispatch(0, 1, 1, 1);
 
-        post1.SetInt("_RowOffset", 1568);
+        //post1.SetInt("_RowOffset", 1568);
+        post1.SetInt("_RowOffset", 2254 - 1960);
         post1.SetTexture(1, "_Scores", scoresRT);
         post1.SetTexture(1, "_Boxes", boxesRT);
         post1.SetBuffer(1, "_Output", _post1Buffer);
         post1.Dispatch(1, 1, 1, 1);
-
-        post1.SetInt("_RowOffset", 1960);
-        post1.SetTexture(2, "_Scores", scoresRT);
-        post1.SetTexture(2, "_Boxes", boxesRT);
-        post1.SetBuffer(2, "_Output", _post1Buffer);
-        post1.Dispatch(2, 1, 1, 1);
-
-        post1.SetInt("_RowOffset", 2058);
-        post1.SetTexture(2, "_Scores", scoresRT);
-        post1.SetTexture(2, "_Boxes", boxesRT);
-        post1.SetBuffer(2, "_Output", _post1Buffer);
-        post1.Dispatch(2, 1, 1, 1);
-
-        post1.SetInt("_RowOffset", 2156);
-        post1.SetTexture(2, "_Scores", scoresRT);
-        post1.SetTexture(2, "_Boxes", boxesRT);
-        post1.SetBuffer(2, "_Output", _post1Buffer);
-        post1.Dispatch(2, 1, 1, 1);
 
         // Release the temporary render textures.
         RenderTexture.ReleaseTemporary(scoresRT);

@@ -428,12 +428,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1951498504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c525b85fa5d174ec89e941f38405442f, type: 3}
+  m_Script: {fileID: 11500000, guid: acd3232faef4444dc86b8321f55a7c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _resources: {fileID: 11400000, guid: e895abc2a928a41faaddec89ef850b5d, type: 2}
   _sourceTexture: {fileID: 2800000, guid: 6f0ac8488c6d342b68316b4aab58ce9e, type: 3}
-  _detectionModel: {fileID: 5022602860645237092, guid: 2ca9452f1940f4b2485a33e12c39269c, type: 3}
-  _landmarkModel: {fileID: 5022602860645237092, guid: eba2687d4a2534f1390a275cf2ffff6b, type: 3}
-  _preprocessCompute: {fileID: 7200000, guid: e499e19a6988f41bab56e2f7e7b880f8, type: 3}
-  _markerPrefab: {fileID: 6897854633693836146, guid: eabf9fc10ad2342e1a14079046ede241, type: 3}
-  _uiRoot: {fileID: 1595319676}

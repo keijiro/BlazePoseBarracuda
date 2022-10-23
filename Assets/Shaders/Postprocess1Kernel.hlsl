@@ -4,7 +4,7 @@
 void KERNEL_NAME(uint2 id : SV_DispatchThreadID)
 {
     // Scale factor based on the input image size
-    float scale = 1 / DETECTOR_IMAGE_SIZE;
+    float scale = 1.0 / DETECTOR_IMAGE_SIZE;
 
     // Corresponding row number in the input texture
     uint row0 = (id.y * CELLS_IN_ROW + id.x) * ANCHOR_COUNT + _RowOffset;
