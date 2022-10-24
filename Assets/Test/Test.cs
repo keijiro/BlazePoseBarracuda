@@ -1,10 +1,21 @@
 using UnityEngine;
+using UnityEngine.UI;
 using MediaPipe.BlazePose;
 
 sealed class Test : MonoBehaviour
 {
-    [SerializeField] ResourceSet _resources = null;
     [SerializeField] Texture2D _sourceTexture = null;
+    [SerializeField] RawImage _uiImage = null;
+    [SerializeField] GameObject _marker = null;
+    [SerializeField] ResourceSet _resources = null;
+
+    void AddMarker(Vector2 pos)
+    {
+        var marker = Instantiate(_marker, _uiImage.transform);
+        var parent = _uiImage.GetComponent<RectTransform>();
+        var xform = marker.GetComponent<RectTransform>();
+        xform.anchoredPosition = pos * parent.rect.size;
+    }
 
     void Start()
     {
@@ -13,7 +24,12 @@ sealed class Test : MonoBehaviour
 
         foreach (var found in detector.Detections)
         {
-            Debug.Log($"{found.center}, {found.extent}, {found.score}");
+            AddMarker(found.key1);
+            AddMarker(found.key2);
+            AddMarker(found.key3);
+            AddMarker(found.key4);
         }
+
+        _uiImage.texture = _sourceTexture;
     }
 }

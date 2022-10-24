@@ -372,7 +372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 6f0ac8488c6d342b68316b4aab58ce9e, type: 3}
+  m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -431,5 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd3232faef4444dc86b8321f55a7c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sourceTexture: {fileID: 2800000, guid: 4790622bfb890485197f7459ed7f0880, type: 3}
+  _uiImage: {fileID: 1595319678}
+  _marker: {fileID: 8811702924021261778, guid: db03315b95bdd47659d2c8699f2a1d6f, type: 3}
   _resources: {fileID: 11400000, guid: e895abc2a928a41faaddec89ef850b5d, type: 2}
-  _sourceTexture: {fileID: 2800000, guid: 6f0ac8488c6d342b68316b4aab58ce9e, type: 3}
