@@ -434,7 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sourceTexture: {fileID: 8400000, guid: e0658b48cd5b040da854cdbd07f714de, type: 2}
   _uiImage: {fileID: 1595319678}
-  _marker: {fileID: 8811702924021261778, guid: db03315b95bdd47659d2c8699f2a1d6f, type: 3}
+  _markerPrefab: {fileID: 8811702924021261778, guid: db03315b95bdd47659d2c8699f2a1d6f, type: 3}
   _resources: {fileID: 11400000, guid: e895abc2a928a41faaddec89ef850b5d, type: 2}
 --- !u!114 &1951498507
 MonoBehaviour:
