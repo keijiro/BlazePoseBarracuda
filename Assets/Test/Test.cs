@@ -4,7 +4,7 @@ using MediaPipe.BlazePose;
 
 sealed class Test : MonoBehaviour
 {
-    [SerializeField] Texture2D _sourceTexture = null;
+    [SerializeField] Texture _sourceTexture = null;
     [SerializeField] RawImage _uiImage = null;
     [SerializeField] GameObject _marker = null;
     [SerializeField] ResourceSet _resources = null;

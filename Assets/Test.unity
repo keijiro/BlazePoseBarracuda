@@ -372,7 +372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 8400000, guid: e0658b48cd5b040da854cdbd07f714de, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -396,6 +396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1951498505}
+  - component: {fileID: 1951498507}
   - component: {fileID: 1951498506}
   m_Layer: 0
   m_Name: Test
@@ -431,7 +432,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd3232faef4444dc86b8321f55a7c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sourceTexture: {fileID: 2800000, guid: 4790622bfb890485197f7459ed7f0880, type: 3}
+  _sourceTexture: {fileID: 8400000, guid: e0658b48cd5b040da854cdbd07f714de, type: 2}
   _uiImage: {fileID: 1595319678}
   _marker: {fileID: 8811702924021261778, guid: db03315b95bdd47659d2c8699f2a1d6f, type: 3}
   _resources: {fileID: 11400000, guid: e895abc2a928a41faaddec89ef850b5d, type: 2}
+--- !u!114 &1951498507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951498504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ff2e515a81541cbb664860588e2c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sourceType: 0
+  _texture: {fileID: 2800000, guid: 6f0ac8488c6d342b68316b4aab58ce9e, type: 3}
+  _textureUrl: 
+  _video: {fileID: 0}
+  _videoUrl: 
+  _webcamName: 
+  _webcamResolution: {x: 1920, y: 1080}
+  _webcamFrameRate: 30
+  _outputTexture: {fileID: 8400000, guid: e0658b48cd5b040da854cdbd07f714de, type: 2}
+  _outputResolution: {x: 1024, y: 1024}
+  _shader: {fileID: 4800000, guid: 3f7d8db4748f54c638a46cec0b0e61f8, type: 3}
